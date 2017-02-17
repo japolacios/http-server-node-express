@@ -143,12 +143,24 @@ Edit User
 ****************************/
 
 
+app.get('/users/edit', function(req, res, next) {
+    res.render('edit-user');
+});
 
-
-app.put('/users/:userId', function(req, res, next) {
+app.put('/users/', function(req, res, next) {
+    /*
     res.write('Debo actualizar el usuario con id: ' + req.params.userId + '\n');
     res.end('Los nuevos datos son: nombre=' + req.body.nombre +
         ' correo=' + req.body.correo);
+        */
+
+    var newName = req.body.nombre;
+    var id = req.body.codigo;
+    console.log('Se Modificara -> Nombre: '+ newName + '  - Codigo: '+ id);
+
+    data.updateById(newName, id);
+    res.end("OK");
+
 });
 
 
