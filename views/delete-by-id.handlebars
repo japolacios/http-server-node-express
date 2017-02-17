@@ -1,0 +1,27 @@
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+
+      	$('title').replaceWith('<title>Elimina un Usuario</title>');
+
+          var userId;
+         
+          $("#submit").click(function(){
+            userId=$("#userId").val();
+              var deleteUrl = "http://localhost:3000/users/deleteId/"+userId;
+              console.log(deleteUrl);
+              $.ajax({
+              url: deleteUrl ,
+              type: 'DELETE',
+              success: function(result) {
+              alert("Usuario Borrado");
+            }
+          });
+        });
+      });
+        
+    </script>
+    <h1>Eliminar Usuario por Codigo</h1>
+    <h3>Codigo</h3>
+    <input type="text" id="userId" size="40"><br>
+    <input type="button" id="submit" value="submit">

@@ -1,0 +1,17 @@
+{
+  "name": "node-http-server",
+  "version": "1.0.0",
+  "description": "Introducción a al módulo http y express",
+  "main": "http-server-express-simple.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express3-handlebars": "^0.5.2",
+    "morgan": "^1.7.0"
+  }
+}

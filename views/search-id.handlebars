@@ -1,0 +1,20 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+
+      	$('title').replaceWith('<title>Busca un Usuario por Id</title>');
+
+          var userId;
+         
+          $("#submit").click(function(){
+          userId=$("#userId").val();
+          $.post("http://localhost:3000/users/search-code",{userId: userId});
+          window.location.replace("http://localhost:3000/users/search-result");
+        });
+      });
+        
+    </script>
+    <h1>Buscar Usuario por Codigo</h1>
+    <h3>Codigo</h3>
+    <input type="text" id="userId" size="40"><br>
+    <input type="button" id="submit" value="Buscar">

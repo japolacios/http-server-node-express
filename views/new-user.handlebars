@@ -1,0 +1,19 @@
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+
+      	$('title').replaceWith('<title>Agrega Usuario Nuevo</title>');
+
+        var user,userId;
+        $("#submit").click(function(){
+          user=$("#user").val();
+          userId=$("#userId").val();
+          $.post("http://localhost:3000/users/input",{user: user,userId: userId});
+        $('body').replaceWith('<body><div class="main-container"><div class="content"><h1>Nuevo Usuario agregado <br><br><a href="http://localhost:3000/users/">Home</a></div></div></body>');
+        });
+      });
+    </script>
+    <h1>Registra Nuevo Usuario</h1>
+    <input type="text" id="user" placeholder="Nombre">
+    <input type="text" id="userId" placeholder="Codigo">
+    <input type="button" id="submit" value="Agregar">
